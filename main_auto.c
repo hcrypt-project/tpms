@@ -126,7 +126,7 @@ void t_learn(int machine,int in[K][N],int tau)
 }
 
 //perceptron functions
-int p_run(int machine,int perceptron,int *in)
+int p_run(int machine,int perceptron,int in[N])
 {
     int weight,t,o=1;
     for(weight=0;weight<N;weight++)
@@ -138,7 +138,7 @@ int p_run(int machine,int perceptron,int *in)
     return o>0 ? 1 : -1; //return signum (parity in our notion)
 }
 
-void p_learn(int machine, int perceptron,int *in,int tau)
+void p_learn(int machine, int perceptron,int in[N],int tau)
 {
     int weight;
     int o=p_run(machine,perceptron,in);

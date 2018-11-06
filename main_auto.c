@@ -23,10 +23,6 @@ int diff(int machine1, int machine2);
 void printweights(int machine);
 void geninput(void);
 
-// dynamic allocation
-//int ***weights; //weights[2 machines][K perceptrons][N weights]
-//int **input;    //input[K perceptrons][N weights] (range {-1,1})
-
 //automatic allocation
 int weights[2][K][N];
 int input[K][N];
@@ -35,21 +31,6 @@ int main(int argc, const char * argv[])
 {
     int i,j;
     int tau1,tau2,tau3,runs;
-    
-    
-    // dynamic allocation
-    //weights=(int***)malloc(sizeof(int**)*3);    // 3 machines
-    //weights[0]=(int**)malloc(sizeof(int*)*K);   // K perceptrons per machine
-    //weights[1]=(int**)malloc(sizeof(int*)*K);
-    //weights[2]=(int**)malloc(sizeof(int*)*K);
-    //input=(int**)malloc(sizeof(int*)*K);        // K perceptrons per random input
-    //for(i=0;i<K;i++)
-    //{
-    //    weights[0][i]=(int*)malloc(sizeof(int)*N);  //N weights per perceptron
-    //    weights[1][i]=(int*)malloc(sizeof(int)*N);
-    //    weights[2][i]=(int*)malloc(sizeof(int)*N);
-    //    input[i]=(int*)malloc(sizeof(int)*N);       //N weights per random input
-    //}
     
     //randomize 2x K vectors with N weights each in range {-L..L}
     srand(1); // STATIC SEED: change me
